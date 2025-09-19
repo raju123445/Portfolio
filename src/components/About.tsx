@@ -40,12 +40,12 @@ export default function About() {
           >
             <h2 className="text-4xl font-bold mb-6">About Me</h2>
             <p className="text-muted-foreground text-lg mb-6">
-              I'm a passionate full-stack developer with over 3 years of experience building
+              I&apos;m a passionate full-stack developer with over 3 years of experience building
               scalable web applications. I love creating efficient, user-friendly solutions
               that solve real-world problems.
             </p>
             <p className="text-muted-foreground text-lg mb-8">
-              When I'm not coding, you can find me exploring new technologies, contributing
+              When I&apos;m not coding, you can find me exploring new technologies, contributing
               to open-source projects, or sharing knowledge with the developer community.
             </p>
             

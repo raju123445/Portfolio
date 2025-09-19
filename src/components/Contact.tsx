@@ -25,7 +25,7 @@ export default function Contact() {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000))
     
-    alert('Thank you for your message! I\'ll get back to you soon.')
+    alert('Thank you for your message! I&apos;ll get back to you soon.')
     setFormData({ name: '', email: '', subject: '', message: '' })
     setIsSubmitting(false)
   }
