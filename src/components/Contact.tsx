@@ -43,7 +43,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
+            <h3 className="text-2xl font-semibold mb-6">Let&aposs Connect</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
