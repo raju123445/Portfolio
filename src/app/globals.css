@@ -1,26 +1,178 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Modern Dark Theme Color Palette */
+  
+  /* Background Colors */
+  --bg-50: #0a0a0a;      /* Deepest background */
+  --bg-100: #111111;     /* Card backgrounds */
+  --bg-200: #1a1a1a;     /* Elevated surfaces */
+  --bg-300: #222222;     /* Hover states */
+  --bg-400: #2a2a2a;     /* Active states */
+  
+  /* Surface Colors */
+  --surface-50: #0f0f0f;   /* Primary surface */
+  --surface-100: #161616;  /* Secondary surfaces */
+  --surface-200: #1e1e1e;  /* Tertiary surfaces */
+  --surface-300: #262626;  /* Interactive elements */
+  --surface-400: #2e2e2e;  /* Hover states */
+  
+  /* Primary Colors */
+  --primary-50: #3b82f6;   /* Primary brand */
+  --primary-100: #2563eb;  /* Hover states */
+  --primary-200: #1d4ed8;  /* Pressed states */
+  --primary-300: #1e40af;  /* Disabled states */
+  --primary-400: #1e3a8a;  /* Darkest primary */
+  
+  /* Accent Colors */
+  --accent-50: #8b5cf6;    /* Accent highlights */
+  --accent-100: #7c3aed;   /* Interactive accents */
+  --accent-200: #6d28d9;   /* Hover states */
+  --accent-300: #5b21b6;   /* Pressed states */
+  --accent-400: #4c1d95;   /* Darkest accent */
+  
+  /* Muted Colors */
+  --muted-50: #6b7280;     /* Secondary text */
+  --muted-100: #4b5563;    /* Tertiary text */
+  --muted-200: #374151;    /* Borders */
+  --muted-300: #1f2937;    /* Backgrounds */
+  --muted-400: #111827;    /* Darkest muted */
+  
+  /* Semantic Colors */
+  --background: var(--bg-50);
+  --foreground: #ffffff;
+  --card: var(--surface-50);
+  --card-foreground: #ffffff;
+  --popover: var(--surface-100);
+  --popover-foreground: #ffffff;
+  --primary: var(--primary-50);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface-200);
+  --secondary-foreground: #ffffff;
+  --muted: var(--muted-300);
+  --muted-foreground: var(--muted-50);
+  --accent: var(--accent-50);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: var(--muted-200);
+  --input: var(--surface-200);
+  --ring: var(--primary-50);
+  --radius: 0.5rem;
+  
+  /* Gradient Colors */
+  --gradient-hero-start: #0f0f23;
+  --gradient-hero-end: #1a1a2e;
+  --gradient-hover-start: #3b82f6;
+  --gradient-hover-end: #8b5cf6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  border-color: var(--border);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background-color: var(--bg-50);
+  color: var(--foreground);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--bg-50);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Ensure all elements use dark theme */
+* {
+  box-sizing: border-box;
+}
+
+/* Override any default white backgrounds */
+div, section, main, article, aside, header, footer, nav {
+  background-color: transparent;
+}
+
+/* Ensure text is visible on dark background */
+h1, h2, h3, h4, h5, h6, p, span, a, li, td, th {
+  color: inherit;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Gradient Utilities */
+.gradient-hero {
+  background: linear-gradient(135deg, var(--gradient-hero-start), var(--gradient-hero-end));
+}
+
+.gradient-hover {
+  background: linear-gradient(135deg, var(--gradient-hover-start), var(--gradient-hover-end));
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-50), var(--accent-50));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Color Utilities */
+.bg-surface-50 { background-color: var(--surface-50); }
+.bg-surface-100 { background-color: var(--surface-100); }
+.bg-surface-200 { background-color: var(--surface-200); }
+.bg-surface-300 { background-color: var(--surface-300); }
+.bg-surface-400 { background-color: var(--surface-400); }
+
+.text-muted-50 { color: var(--muted-50); }
+.text-muted-100 { color: var(--muted-100); }
+.text-muted-200 { color: var(--muted-200); }
+
+.border-muted-200 { border-color: var(--muted-200); }
+.border-muted-300 { border-color: var(--muted-300); }
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground) / 0.5);
 }
